@@ -1,15 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Task {
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @Column({
         length: 20,
     })
-    name: string
+    name: string;
 
     @Column()
-    isCompleted: boolean
+    isCompleted: boolean;
 }

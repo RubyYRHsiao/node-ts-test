@@ -15,8 +15,8 @@ export const getTask = (taskId: number): Promise<Task> => {
 
 export const updateTask = (taskId: number, newTask: Task): Promise<Task> => {
     return TaskModel.updateTask(taskId, newTask);
-}
+};
 
 export const deleteTask = (taskId: number): void => {
     TaskModel.deleteTask(taskId);
-}
+};
