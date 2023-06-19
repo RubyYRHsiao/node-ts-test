@@ -18,8 +18,8 @@ export const getTask = async (taskId: number): Promise<Task> => {
 export const updateTask = async (taskId: number, newTask: Task): Promise<Task> => {
     await taskRepository.update(taskId, newTask);
     return taskRepository.findOneBy({ id: taskId });
-}
+};
 
 export const deleteTask = async (taskId: number): Promise<void> => {
     await taskRepository.delete(taskId);
-}
+};

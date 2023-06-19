@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 const server = http.createServer(app);
+console.log(typeof server);
 app.use('/api/v1/tasks', tasks);
 
 connectDB();
