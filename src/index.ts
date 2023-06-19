@@ -1,5 +1,4 @@
 import express from 'express';
-import http from 'http';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
@@ -18,8 +17,6 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-const server = http.createServer(app);
-console.log(typeof server);
 app.use('/api/v1/tasks', tasks);
 
 connectDB();
