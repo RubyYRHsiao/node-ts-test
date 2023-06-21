@@ -15,7 +15,7 @@
 1. Clone the repo
 
    ```
-   https://github.com/RubyYRHsiao/node-ts-test.git
+   https://github.com/RubyYRHsiao/node-typeorm.git
    ```
 
 2. Create a database with Docker
