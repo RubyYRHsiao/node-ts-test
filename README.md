@@ -6,7 +6,7 @@
 - Typescript 4.9.5
 - Express 4.18.2
 - TypeORM 0.3.12
-- MSSQL 7.3.5
+- Postgres 14
 - Nodemon 2.0.21
 - Docker
 
@@ -21,33 +21,17 @@
 2. Create a database with Docker
     - pull image
         ```
-        docker pull mcr.microsoft.com/mssql/server:2022-latest
+        docker pull postgres:alpine
         ```
     - run container
          ```
-         sudo docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=P@ssw0rd" \
-        -p 1433:1433 --name <container_name> --hostname <hostname> \
-        -d \
-        mcr.microsoft.com/mssql/server:2022-latest
-         ```
-    - exec container
-         ```
-         docker exec -it <container_name> bash
-         ```
-    - create DB
-         ```
-         /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "P@ssw0rd"
-         ```
-         ```
-         CREATE DATABASE TestDB;
-         SELECT Name from sys.databases;
-         GO
+         docker run --name <container_name> -e POSTGRES_PASSWORD=password -d -p 15432:5432 postgres:alpine
          ```
 
 3. Run server
     - cd project folder
        ```
-       cd node-ts-test
+       cd node-typeorm
        ```
     - install node_modules
        ```
