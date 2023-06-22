@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres:alpine
+    container_name: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 15432:5432
+  
+  node:
+    container_name: node-ts
+    depends_on:
+      - database
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
