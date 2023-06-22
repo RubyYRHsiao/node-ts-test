@@ -3,16 +3,15 @@ import { DataSource } from 'typeorm';
 import { Task } from '../entity/Task';
 
 export const AppDataSource = new DataSource({
-    type: 'mssql',
+    type: 'postgres',
     host: 'localhost',
-    port: 1433,
-    username: 'SA',
-    password: 'P@ssw0rd',
-    database: 'TestDB',
+    port: 15432,
+    username: 'postgres',
+    password: 'password',
+    database: 'postgres',
     entities: [Task],
     synchronize: true,
-    logging: false,
-    extra: {
-        trustServerCertificate: true,
-    }
+    logging: true,
+    subscribers: [],
+    migrations: []
 });
